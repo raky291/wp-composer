@@ -1,0 +1,22 @@
+{
+  "name": "raky291/wp-composer",
+  "version": "1.0.0",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "johnpbloch/wordpress": "^5.2",
+    "vlucas/phpdotenv": "^3.6"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "extra": {
+    "wordpress-install-dir": "wp"
+  }
+}
