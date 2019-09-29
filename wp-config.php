@@ -13,7 +13,7 @@ Env::init();
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
 $dotenv->required(['WP_HOME', 'DB_NAME', 'DB_USER'])->notEmpty();
-$dotenv->required('WP_DEV')->isBoolean();
+$dotenv->required(['WP_DEV'])->isBoolean();
 
 /**
  * URLs
