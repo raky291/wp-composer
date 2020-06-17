@@ -12,8 +12,7 @@ Env::init();
  */
 $dotenv = Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
-$dotenv->required(['WP_HOME', 'DB_NAME', 'DB_USER'])->notEmpty();
-$dotenv->required(['WP_DEV'])->isBoolean();
+$dotenv->required(['WP_HOME', 'DB_NAME', 'DB_USER', 'DB_PASSWORD']);
 
 /**
  * URLs
@@ -36,7 +35,7 @@ define('DB_PASSWORD', env('DB_PASSWORD'));
 define('DB_HOST', env('DB_HOST') ?: 'localhost');
 define('DB_CHARSET', env('DB_CHARSET') ?: 'utf8');
 define('DB_COLLATE', env('DB_COLLATE') ?: '');
-$table_prefix = 'wp_';
+$table_prefix = env('DB_PREFIX') ?: 'wp_';
 
 /**
  * Authentication unique keys and salts
@@ -59,8 +58,8 @@ define('DISALLOW_FILE_MODS', true);
  * Debugging settings
  */
 define('WP_DEBUG', true);
-define('WP_DEBUG_DISPLAY', env('WP_DEV'));
-define('WP_DEBUG_LOG', !env('WP_DEV'));
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', env('WP_DEBUG_DISPLAY') ?: true);
 
 if (!defined('ABSPATH')) {
     define('ABSPATH', __DIR__ . '/wp/');

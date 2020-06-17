@@ -9,9 +9,9 @@
     }
   ],
   "require": {
-    "johnpbloch/wordpress": "^5.2",
-    "oscarotero/env": "^1.2",
-    "vlucas/phpdotenv": "^3.6"
+    "johnpbloch/wordpress": "^5.4.2",
+    "oscarotero/env": "^1.2.0",
+    "vlucas/phpdotenv": "^3.6.6"
   },
   "config": {
     "optimize-autoloader": true,
